@@ -1,0 +1,19 @@
+function rot13(str) {
+  let wordList = str.split("")
+  let message = [];
+
+  wordList.forEach(w => {
+    if (w.charCodeAt() >= 65 && w.charCodeAt() <= 91) {
+
+      let possition = w.charCodeAt() + 13 > 90 ? 65 + (w.charCodeAt() + 13) % 91 : w.charCodeAt() + 13;
+
+      message.push(String.fromCharCode(possition));
+    }
+    else message.push(String.fromCharCode(w.charCodeAt()));
+
+  });
+  //65-A 90-Z
+  return message.join("");
+}
+
+console.log(rot13("SERR PBQR PNZC"));

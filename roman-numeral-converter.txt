@@ -1,0 +1,54 @@
+function convertToRoman(num) {
+  let final = "";
+  if (Math.floor(num / 1000) > 0) {
+    let n = Math.floor(num / 1000);
+    num -= 1000 * n;
+    while (n > 0) { final += "M"; --n; }
+  }
+  if (Math.floor(num / 100)) {
+    let n = Math.floor(num / 100);
+    num -= 100 * n;
+
+    if (n === 9) final += "CM";
+    if (n === 8) final += "DCCC";
+    if (n === 7) final += "DCC";
+    if (n === 6) final += "DC";
+    if (n === 5) final += "D";
+    if (n === 4) final += "CD";
+    if (n === 3) final += "CCC";
+    if (n === 2) final += "CC";
+    if (n === 1) final += "C";
+
+  }
+  if (Math.floor(num / 10) > 0) {
+    let n = Math.floor(num / 10);
+    num -= 10 * n;
+    console.log(n);
+    console.log(num)
+
+    if (n === 9) final += "XC";
+    if (n === 8) final += "LXXX";
+    if (n === 7) final += "LXX";
+    if (n === 6) final += "LX";
+    if (n === 5) final += "L";
+    if (n === 4) final += "XL";
+    if (n === 3) final += "XXX";
+    if (n === 2) final += "XX";
+    if (n === 1) final += "X";
+
+  }
+
+  if (num === 9) final += "IX";
+  if (num === 8) final += "VIII";
+  if (num === 7) final += "VII";
+  if (num === 6) final += "VI";
+  if (num === 5) final += "V";
+  if (num === 4) final += "IV";
+  if (num === 3) final += "III";
+  if (num === 2) final += "II";
+  if (num === 1) final += "I";
+  
+  return final;
+}
+
+convertToRoman(36);
