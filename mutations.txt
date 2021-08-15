@@ -1,0 +1,21 @@
+function mutation(arr) {
+  let base = arr[0].toLocaleUpperCase();
+  let comparison = arr[1].toLocaleUpperCase().split("");
+  let result = [];
+
+  comparison.forEach(c =>{
+    if(base.includes(c))
+    result.push(1);
+    else result.push(0);
+  });
+
+  console.log(base, comparison, result);
+  console.log(result.reduce((a,c)=> a+c));
+  if(result.find(e => e===0)===0)return false;
+  else return true;
+
+
+
+  }
+
+console.log(mutation(["hello", "hey"]));
